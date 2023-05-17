@@ -1,19 +1,60 @@
 // Iteration #1: Find the maximum
-function maxOfTwoNumbers() {}
+function maxOfTwoNumbers(num1, num2) {
+  if (num1 > num2) {
+    return num1;
+}
+return num2;
+}
 
 
 
 // Iteration #2: Find longest word
+
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-function findLongestWord() {}
+function findLongestWord(arrOfWords) {
+  if (!arrOfWords.length) {
+    return null;
+  }
+  
+  if (arrOfWords.length === 1) {
+    return arrOfWords[0];
+  }
+  
+  let largestWord = arrOfWords[0];
+  
+  for (let word of arrOfWords) {
+    if (word.length > largestWord.length) {
+    largestWord = word;
+    }
+  }
+  
+  return largestWord;
 
 
+
+
+  let doesExist = false;
+  for(let i=0; i<someArr.length; i++){
+    if(someArr[i] === someWord){
+      doesExist = true;
+    }
+  }
+  return doesExist;
+}
 
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
+  
+  function sumNumbers(numbers) {
+      let result = 0;
+      for (let i = 0; i < numbers.length; i++) {
+        result = result + numbers[i];
+      }
+      return result;  
+    }
+    
 
-function sumNumbers() {}
 
 
 
@@ -26,13 +67,40 @@ function sum() {}
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
+function averageNumbers(numbersAvg) {
+  if(!numbersAvg.length){
+    return null;
+  } else{
+      return sumNumbers(numbersAvg) / numbersAvg.length;
+    }
+ 
+}
+
+
 
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() { }
+function averageWordLength(wordsArr) {
+  if(!wordsArr.length){
+    // if(!wordsArray.length) quiere decir: "Si la longitud del array es 0, entonces es true, por lo que la función retorna null... Andrea, ya me diras si esta bien mi conjetura :-) hago esto para entender mejor lo que estoy haciendo y después recordarlo"
+    return null;
+    } else{
+      // En caso contrario, la función inicializa una variable llamada result con valor 0. 
+      let result = 0;
+      // Luego, utiliza un bucle for para recorrer todas las palabras del array. En cada iteración del bucle, suma la longitud de la palabra actual a result.
+      for (let i = 0; i < wordsArr.length; i++) {
+        // Entonces ejecutandose el bucle la variable resultado es igual a 0 y en cada vuelta se luma su valor + el valor del length de cada palabra del array, hasta sumar el valor de todos los elementos del array.
+        result = result + wordsArr[i].length;
+        }
+        // Finalmente le pedimos al la función que retorne el valor obtenido con la suma de los valores de todos los elementos del array y la dividimos entre wordsArr[i].length, es decodeURI, el numero de elementos que hay en el array
+        return result / wordsArr.length;
+        }
+        }
+
+
+
 
 // Bonus - Iteration #4.1
 function avg() {}
@@ -52,14 +120,38 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(words) {
+  if (words.length === 0) {
+    return null;
+  }
+
+  const uniqueArray = [];
+  for (let i = 0; i < words.length; i++) {
+    if (!uniqueArray.includes(words[i])) {
+      uniqueArray.push(words[i]);
+    }
+  }
+
+  return uniqueArray;
+}
 
 
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+function doesWordExist(wordsFind, wordToSearch) {
+  if (wordsFind.length === 0) {
+    return null;
+  }
+
+  for (let i = 0; i < words.length; i++) {
+    if (wordsFind[i] === wordToSearch) {
+      return true;
+    }
+  }
+  return false;
+}
 
 
 
@@ -78,7 +170,19 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(wordsCount, wordToSearch) {
+  if (wordsCount.length === 0) {
+    return 0;
+  }
+
+  let count = 0;
+  for (let i = 0; i < wordsCount.length; i++) {
+    if (wordsCount[i] === wordToSearch) {
+      count++;
+    }
+  }
+
+  return count;}
 
 
 
